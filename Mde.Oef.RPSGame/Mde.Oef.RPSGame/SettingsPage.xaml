@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Style="{StaticResource PageStyle}"
+             Title="Settings"
+             x:Class="Mde.Oef.RPSGame.SettingsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Image Source="background.png" Aspect="AspectFill" Opacity="0.1" />
+                <StackLayout Padding="10">
+                    <Label>Username</Label>
+                    <Entry x:Name="txtUserName" Keyboard="Text"></Entry>
+                    <Label>E-mail</Label>
+                    <Entry x:Name="txtEmail" Keyboard="Email"></Entry>
+                    <StackLayout Orientation="Horizontal" Margin="0,20,0,10">
+                        <Label HorizontalOptions="StartAndExpand">Receive weekly stats</Label>
+                        <Switch x:Name="chkReceiveStats" HorizontalOptions="End"></Switch>
+                    </StackLayout>
+                    <Button Text="Save" 
+                            Clicked="Save_Clicked"
+                            HorizontalOptions="Center"></Button>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

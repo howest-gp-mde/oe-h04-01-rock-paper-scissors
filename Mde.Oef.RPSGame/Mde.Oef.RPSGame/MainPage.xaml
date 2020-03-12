@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             Style="{StaticResource PageStyle}"
+             NavigationPage.HasNavigationBar="False"
+             Title="Rock Paper Scissors"
+             x:Class="Mde.Oef.RPSGame.MainPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Image Source="background.png" Aspect="AspectFill" Opacity="0.1" />
+                <StackLayout Spacing="5" VerticalOptions="Center">
+                    <Image Source="appsplash.png" Aspect="AspectFit" HeightRequest="250" />
+                    <Button Text="Play" 
+                            HorizontalOptions="Center"
+                            Padding="80,20" FontSize="Large"
+                            Clicked="Play_Clicked"></Button>
+                    <Button Text="Settings" 
+                            HorizontalOptions="Center" 
+                            Padding="40,5,40,5"
+                            Clicked="Settings_Clicked"></Button>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

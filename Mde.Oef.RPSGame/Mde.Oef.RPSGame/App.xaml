@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Mde.Oef.RPSGame.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ColorSuccess">#4fc949</Color>
+            <Color x:Key="ColorFail">#c7484c</Color>
+            <Color x:Key="ColorWarn">#c78348</Color>
+            <Color x:Key="DarkGrey">#666666</Color>
+            <Color x:Key="GameBackground">#EBF5E5</Color>
+
+            <Style x:Key="PageStyle" TargetType="ContentPage">
+                <Setter Property="BackgroundColor" Value="{StaticResource GameBackground}"></Setter>
+            </Style>
+
+            <Style x:Key="GameFlexLayout" TargetType="FlexLayout">
+                <Setter Property="AlignContent" Value="SpaceEvenly"></Setter>
+                <Setter Property="JustifyContent" Value="Center"></Setter>
+                <Setter Property="AlignItems" Value="End"></Setter>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"></Setter>
+            </Style>
+
+            <Style x:Key="HandFrame" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False"></Setter>
+                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+                <Setter Property="HeightRequest" Value="108"></Setter>
+                <Setter Property="WidthRequest" Value="108"></Setter>
+                <Setter Property="Padding" Value="0"></Setter>
+            </Style>
+
+            <Style x:Key="HandFrameWithBackground" TargetType="Frame"
+                   BasedOn="{StaticResource HandFrame}">
+                <Setter Property="CornerRadius" Value="54"></Setter>
+                <Setter Property="BackgroundColor" Value="#66FFFFFF"></Setter>
+            </Style>
+
+            <Style x:Key="HandButton" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+                <Setter Property="HeightRequest" Value="108"></Setter>
+                <Setter Property="WidthRequest" Value="108"></Setter>
+                <Setter Property="Padding" Value="0"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

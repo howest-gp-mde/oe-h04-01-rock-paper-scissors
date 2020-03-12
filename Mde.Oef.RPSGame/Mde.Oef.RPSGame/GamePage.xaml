@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="False"
+             Style="{StaticResource PageStyle}"
+             Title="Rock Paper Scissors"
+             x:Class="Mde.Oef.RPSGame.GamePage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Image Source="background.png" Aspect="AspectFill" Opacity="0.1" />
+                <StackLayout x:Name="gameLayout"
+                    HorizontalOptions="CenterAndExpand" 
+                    Padding="20, 20, 20, 0">
+                    <FlexLayout x:Name="choicesLayout" 
+                                Style="{x:StaticResource GameFlexLayout}">
+                        <Frame x:Name="playerFrameRock" 
+                               Style="{x:StaticResource HandFrame}">
+                            <ImageButton x:Name="playerHandRock"
+                                Clicked="PlayerHand_Click"
+                                Style="{x:StaticResource HandButton}"
+                                Source="rock.png">
+                            </ImageButton>
+                        </Frame>
+                        <Frame x:Name="playerFramePaper"
+                               Style="{x:StaticResource HandFrame}">
+                            <ImageButton x:Name="playerHandPaper"
+                                Clicked="PlayerHand_Click"
+                                Style="{x:StaticResource HandButton}"
+                                Source="paper.png" />
+                        </Frame>
+                        <Frame x:Name="playerFrameScissors" 
+                               Style="{x:StaticResource HandFrame}">
+                            <ImageButton x:Name="playerHandScissors"
+                                Clicked="PlayerHand_Click"
+                                Style="{x:StaticResource HandButton}"
+                                Source="scissors.png" />
+                        </Frame>
+                    </FlexLayout>
+                    <StackLayout x:Name="advisorLayout" IsVisible="True">
+                        <Label TextColor="{x:StaticResource DarkGrey}" 
+                               FontSize="40" Margin="10,60,10,0"
+                               HorizontalTextAlignment="Center"
+                               Text="rock, paper or scissors"></Label>
+                    </StackLayout>
+                    <FlexLayout x:Name="versusLayout" IsVisible="False"
+                                Style="{x:StaticResource GameFlexLayout}">
+                        <StackLayout>
+                            <Label Text="You" HorizontalTextAlignment="Center"></Label>
+                            <Frame Style="{x:StaticResource HandFrameWithBackground}">
+                                <Image x:Name="playerChoiceImage" Source="rock.png" />
+                            </Frame>
+                        </StackLayout>
+                        <Frame HasShadow="False" BackgroundColor="Transparent"
+                            HeightRequest="108" WidthRequest="108" Padding="0">
+                            <Label FontAttributes="Bold" FontSize="30" 
+                                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                                   Text="VS" />
+                        </Frame>
+                        <StackLayout>
+                            <Label Text="Computer" HorizontalTextAlignment="Center"></Label>
+                            <Frame Style="{x:StaticResource HandFrameWithBackground}">
+                                <Image x:Name="computerChoiceImage" Source="rock.png" />
+                            </Frame>
+                        </StackLayout>
+                    </FlexLayout>
+                    <Frame x:Name="resultsLayout" HasShadow="False" Padding="20">
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <Label x:Name="lblWinningHand" Text="WinningHand" 
+                                       HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                                <Label x:Name="lblHandAction"  Text="beats" 
+                                       HorizontalTextAlignment="Center"></Label>
+                                <Label x:Name="lblLosingHand" Text="LosingHand"
+                                       HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                            </StackLayout>
+                            <Label x:Name="lblGameResult" 
+                               Margin="10"
+                               HorizontalOptions="Fill"
+                               Text="YOU LOSE"
+                               HorizontalTextAlignment="Center" TextColor="{StaticResource ColorFail}" 
+                               FontAttributes="Bold" FontSize="30" />
+
+                            <Button Text="Play again" Clicked="PlayAgain_Clicked" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame x:Name="statisticsLayout" HasShadow="False" Padding="20">
+                        <StackLayout HorizontalOptions="Center" Spacing="0">
+                            <Label Text="Statistics" HorizontalTextAlignment="Center" Margin="0,0,0,20" FontSize="Caption" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+                                   Text="Total wins:"  />
+                                <Label Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Start"
+                                   x:Name="lblTotalWins"
+                                   TextColor="{StaticResource ColorSuccess}" FontSize="20"
+                                   Text="10" />
+                                <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+                                   Text="Total losses:"  />
+                                <Label Grid.Row="1" Grid.Column="1" HorizontalTextAlignment="Start"
+                                   x:Name="lblTotalLosses"
+                                   TextColor="{StaticResource ColorFail}" FontSize="20"
+                                   Text="10" />
+                                <Label Grid.Row="2" Grid.Column="0" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+                                   Text="Total draws:"  />
+                                <Label Grid.Row="2" Grid.Column="1" HorizontalTextAlignment="Start"
+                                   x:Name="lblTotalDraws"
+                                   TextColor="{StaticResource ColorWarn}" FontSize="20"
+                                   Text="10" />
+                            </Grid>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
